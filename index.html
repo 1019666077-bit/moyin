@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Moyin · English letters as a Chinese chop</title>
+  <meta name="description" content="Turn 2–4 English letters into a Chinese seal. Zhuwen and baiwen. Square or round. Free watermarked preview." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="top">
+      <a class="brand" href="./">
+        <div class="mark">印</div>
+        <div>
+          <h1>Moyin</h1>
+          <p>English letters as a Chinese chop</p>
+        </div>
+      </a>
+    </header>
+    <div class="layout">
+      <section class="stage">
+        <canvas id="seal" width="900" height="1100"></canvas>
+        <div class="caption">
+          Not a translation. <span id="live">M · O · Y</span> cut as a seal face.
+        </div>
+      </section>
+      <aside class="panel">
+        <label class="k" for="word">Initials or short mark</label>
+        <input id="word" type="text" maxlength="8" value="MOY" autocomplete="off" spellcheck="false" />
+        <div class="meta"><span>2–4 letters look best</span><span id="count">3/4</span></div>
+        <label class="k" style="margin-top:16px">Face</label>
+        <div class="row">
+          <button data-k="style" data-v="baiwen" class="on">Baiwen 白文</button>
+          <button data-k="style" data-v="zhuwen">Zhuwen 朱文</button>
+        </div>
+        <div class="row">
+          <button data-k="shape" data-v="square" class="on">Square</button>
+          <button data-k="shape" data-v="round">Round</button>
+          <button data-k="shape" data-v="oval">Oval</button>
+        </div>
+        <div class="row">
+          <button data-k="face" data-v="yinni" class="on">Ink paste</button>
+          <button data-k="face" data-v="dry">Dry stamp</button>
+          <button data-k="face" data-v="aged">Aged</button>
+        </div>
+        <div class="row">
+          <button data-k="order" data-v="seal" class="on">Seal order</button>
+          <button data-k="order" data-v="western">Western grid</button>
+        </div>
+        <div class="sliders">
+          <div><label class="k">Border</label><input id="border" type="range" min="10" max="36" value="18" /></div>
+          <div><label class="k">Inset</label><input id="inset" type="range" min="4" max="28" value="14" /></div>
+          <div><label class="k">Stroke weight</label><input id="weight" type="range" min="0.4" max="1" step="0.02" value="0.72" /></div>
+        </div>
+        <button class="pay" id="unlock">Unlock clean file · $1.99</button>
+        <p class="hint">Preview is free. Unlock on this device removes the caption so you can export a clean PNG / transparent PNG / SVG.</p>
+        <div class="exports">
+          <button class="primary" id="png">PNG</button>
+          <button id="alpha">Transparent</button>
+          <button id="svg">SVG</button>
+        </div>
+        <label class="k" style="margin-top:18px">Try</label>
+        <div class="row">
+          <button data-preset="EK">EK</button>
+          <button data-preset="J">J</button>
+          <button data-preset="MOY">MOY</button>
+          <button data-preset="AMY">AMY</button>
+          <button data-preset="RM">RM</button>
+        </div>
+      </aside>
+    </div>
+    <footer class="foot">
+      <span>Moyin · a chop, not a translation.</span>
+      <span>One mark, one file.</span>
+    </footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
